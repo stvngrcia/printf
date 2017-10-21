@@ -15,7 +15,7 @@ int main(void)
 	number = 19912507;
 
 
-	a = _printf("%d\n", number);
+	a = _printf("%i, %d\n", number, number);
 	printf("%d\n", a);
 	return (0);
 }
