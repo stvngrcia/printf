@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%') /*Checks for format specifiers*/
 		{
 			/*Iterates through struct to find the right func*/
-			for (j = 0; f_list[i].sym != NULL; j++)
+			for (j = 0; f_list[j].sym != NULL; j++)
 			{
 				if (format[i + 1] == f_list[j].sym[0])
 				{
@@ -41,8 +41,7 @@ int _printf(const char *format, ...)
 			_write_char(format[i]); /*call the write function*/
 			printed_chars++;
 		}
-
 	}
-	_write_char('\n');
+	va_end(arg_list);
 	return (printed_chars);
 }

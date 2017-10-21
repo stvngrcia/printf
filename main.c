@@ -9,10 +9,12 @@
 int main(void)
 {
 	char c;
+	char *str;
 	int a;
 
-	c = 'S';
-	a = _printf("%c", c);
+	c = 'G';
+	str = "steven";
+	a = _printf("%s%c\n", str, c);
 	printf("%d\n", a);
 	return (0);
 }
