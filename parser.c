@@ -15,11 +15,14 @@ int _printf(const char *format, ...)
 		{"c", print_char},
 		{"s", print_string},
 		{"%", print_percent},
+		{"d", print_integer},
+		{"i", print_integer},
 		{NULL, NULL}
 	};
 	va_list arg_list;
 
 	va_start(arg_list, format);
+	printed_chars = 0;
 	if (format == NULL)
 		return (-1);
 	for (i = 0; format[i] != '\0'; i++)/* Iterates through the main str*/
