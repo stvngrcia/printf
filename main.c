@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
  * main - Entry point
  *
@@ -8,8 +9,10 @@
 int main(void)
 {
 	char c;
+	int a;
 
 	c = 'S';
-	_printf("My inital is %c heloo this is a test", c);
+	a = _printf("%c", c);
+	printf("%d\n", a);
 	return (0);
 }

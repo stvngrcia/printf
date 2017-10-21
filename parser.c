@@ -13,6 +13,7 @@ int _printf(const char *format, ...)
 	int printed_chars;
 	conver_t f_list[] = {
 		{"c", print_char},
+		{"s", print_string},
 		{NULL, NULL}
 	};
 	va_list arg_list;
@@ -29,7 +30,7 @@ int _printf(const char *format, ...)
 			{
 				if (format[i + 1] == f_list[j].sym[0])
 				{
-					f_list[j].f(arg_list);
+					printed_chars += f_list[j].f(arg_list);
 					break;
 				}
 			}
@@ -38,8 +39,9 @@ int _printf(const char *format, ...)
 		else
 		{
 			_write_char(format[i]); /*call the write function*/
+			printed_chars++;
 		}
-		printed_chars++;
+
 	}
 	_write_char('\n');
 	return (printed_chars);
