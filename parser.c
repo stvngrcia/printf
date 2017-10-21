@@ -1,44 +1,46 @@
 #include "holberton.h"
 
+/**
+ * _printf - Receives the main string and all the necessary parameters to
+ * print a formated string
+ * @format: A string containing all the desired characters
+ * Return: A total count of the characters printed
+ */
 int _printf(const char *format, ...)
 {
 	int i;
 	int j;
 	int printed_chars;
-	va_list arg_list;
-	conver_t f_list [] = {
-		{'c', print_char},
+	conver_t f_list[] = {
+		{"c", print_char},
 		{NULL, NULL}
 	};
+	va_list arg_list;
 
 	va_start(arg_list, format);
 	if (format == NULL)
 		return (-1);
-	/* Iterates through the main string*/
-	for (i = 0; format[i] != '\0'; i++)
+	for (i = 0; format[i] != '\0'; i++)/* Iterates through the main str*/
 	{
-		/*Checks for format specifiers*/
-		if (format[i] == '%')
+		if (format[i] == '%') /*Checks for format specifiers*/
 		{
 			/*Iterates through struct to find the right func*/
-			for (j = 0; f_list[i].sym != NULL; i++)
+			for (j = 0; f_list[i].sym != NULL; j++)
 			{
-				if (format[i + 1] == f_list[i].sym)
+				if (format[i + 1] == f_list[j].sym[0])
 				{
-					printed_chars = f_list[i].f;
+					f_list[j].f(arg_list);
 					break;
 				}
 			}
-			/*Updating i to skip format symbols*/
-			i = i + 2;
+			i = i + 1; /*Updating i to skip format symbols*/
 		}
 		else
 		{
-			/*call the write function*/
-			_write_char(format[i]);
+			_write_char(format[i]); /*call the write function*/
 		}
-		/*Updating the count for characters printed*/
 		printed_chars++;
 	}
+	_write_char('\n');
 	return (printed_chars);
 }

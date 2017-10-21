@@ -11,13 +11,15 @@
 * @sym: The operator
 * @f: The function associated
 */
-typedef struct convert
+struct convert
 {
-	char sym;
-	int (*f)(char , va_arg);
-} conver_t
+	char *sym;
+	int (*f)(va_list);
+};
+typedef struct convert conver_t;
 
 int _printf(const char *format, ...);
 int _write_char(char);
+int print_char(va_list);
 
 #endif
