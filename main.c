@@ -8,13 +8,14 @@
 
 int main(void)
 {
-	char c;
-	char *str;
 	int a;
+	int number;
 
-	c = 'G';
-	str = "steven";
-	a = _printf("%s%c%%\n", str, c);
+
+	number = 19912507;
+
+
+	a = _printf("%d\n", number);
 	printf("%d\n", a);
 	return (0);
 }
