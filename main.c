@@ -14,7 +14,7 @@ int main(void)
 
 	c = 'G';
 	str = "steven";
-	a = _printf("%s%c\n", str, c);
+	a = _printf("%s%c%%\n", str, c);
 	printf("%d\n", a);
 	return (0);
 }
