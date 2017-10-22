@@ -1,26 +1,19 @@
 #include "holberton.h"
 
 /**
- * _printf - Receives the main string and all the necessary parameters to
- * print a formated string
- * @format: A string containing all the desired characters
- * Return: A total count of the characters printed
+ * parser - Receives the main string and all the necessary parameters to
+ * print a formated string.
+ * @format: A string containing all the desired characters.
+ * @f_list: A list of all the posible functions.
+ * @arg_list: A list containing all the argumentents passed to the program.
+ * Return: A total count of the characters printed.
  */
-int _printf(const char *format, ...)
+int parser(const char *format, conver_t f_list[], va_list arg_list)
 {
-	int i, j, printed_chars;
-	conver_t f_list[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"%", print_percent},
-		{"d", print_integer},
-		{"i", print_integer},
-		{"b", print_binary},
-		{NULL, NULL}
-	};
-	va_list arg_list;
+	int i;
+	int j;
+	int printed_chars;
 
-	va_start(arg_list, format);
 	printed_chars = 0;
 	if (format == NULL)
 		return (-1);
@@ -45,6 +38,5 @@ int _printf(const char *format, ...)
 			printed_chars++;
 		}
 	}
-	va_end(arg_list);
 	return (printed_chars);
 }

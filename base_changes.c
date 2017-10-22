@@ -13,8 +13,8 @@ int print_binary(va_list list)
 	char *str;
 
 	num =  va_arg(list, unsigned int);
-	len = length(num);
-	str = malloc (sizeof(int) * len + 1);
+	len = b_length(num);
+	str = malloc(sizeof(char) * len + 1);
 	if (str == NULL)
 		return (1);
 	for (i = 0; num > 0; i++)
@@ -31,4 +31,3 @@ int print_binary(va_list list)
 	free(str);
 	return (len);
 }
-

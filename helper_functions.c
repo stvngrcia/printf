@@ -1,15 +1,17 @@
 #include "holberton.h"
 /**
- * length - Calculates the length of a number
+ * b_length - Calculates the length for a binary number
  * num: The number for which the length is being calculated
  * Return: An integer representing the length of a number
  */
-int length(unsigned int num)
+int b_length(unsigned int num)
 {
 	int i;
 
 	for (i = 0; num > 0; i++)
-		num = num / 10;
+	{
+		num = num / 2;
+	}
 	return (i);
 }
 
