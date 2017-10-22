@@ -28,10 +28,12 @@ int print_percent(va_list);
 int print_integer(va_list);
 int print_number(int num);
 int print_binary(va_list);
+int print_reversed(va_list arg);
 
 /*Helper functions*/
 int b_length(unsigned int);
-void rev_string(char *);
+char *rev_string(char *);
 void write_base(char *str);
+char *_memcpy(char *dest, char *src, unsigned int n);
 
 #endif

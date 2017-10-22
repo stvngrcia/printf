@@ -11,6 +11,7 @@ int print_binary(va_list list)
 	int i;
 	int len;
 	char *str;
+	char *rev_str;
 
 	num =  va_arg(list, unsigned int);
 	len = b_length(num);
@@ -26,8 +27,9 @@ int print_binary(va_list list)
 		num = num / 2;
 	}
 	str[i] = '\0';
-	rev_string(str);
-	write_base(str);
+	rev_str = rev_string(str);
+	write_base(rev_str);
 	free(str);
+	free(rev_str);
 	return (len);
 }
