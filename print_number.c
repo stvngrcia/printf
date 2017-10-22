@@ -4,6 +4,7 @@ int number_length(unsigned int);
 /**
  * print_number - prints numbers digit by digit
  * @num: number to print
+ * Return: The total printed numebers
  */
 int print_number(int num)
 {
