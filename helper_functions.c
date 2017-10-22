@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * b_length - Calculates the length for a binary number
- * num: The number for which the length is being calculated
+ * @num: The number for which the length is being calculated
  * Return: An integer representing the length of a number
  */
 int b_length(unsigned int num)
@@ -20,6 +20,7 @@ int b_length(unsigned int num)
  * rev_string - reverses a string in place
  *
  * @s: string to reverse
+ * Return: A pointer to a character
  */
 char *rev_string(char *s)
 {
