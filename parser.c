@@ -8,15 +8,14 @@
  */
 int _printf(const char *format, ...)
 {
-	int i;
-	int j;
-	int printed_chars;
+	int i, j, printed_chars;
 	conver_t f_list[] = {
 		{"c", print_char},
 		{"s", print_string},
 		{"%", print_percent},
 		{"d", print_integer},
 		{"i", print_integer},
+		{"b", print_binary},
 		{NULL, NULL}
 	};
 	va_list arg_list;
