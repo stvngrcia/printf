@@ -6,8 +6,8 @@
  */
 int print_char(va_list list)
 {
-	return (_write_char(va_arg(list, int)));
-
+	_write_char(va_arg(list, int));
+	return (1);
 }
 
 /**
@@ -23,8 +23,8 @@ int print_string(va_list list)
 	str = va_arg(list, char *);
 	if (str == NULL)
 		str = "(null)";
-	for (i = 0; str[i] != '\0';)
-		i += _write_char(str[i]);
+	for (i = 0; str[i] != '\0'; i++)
+		_write_char(str[i]);
 	return (i);
 }
 
