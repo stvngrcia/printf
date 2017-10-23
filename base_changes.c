@@ -16,7 +16,7 @@ int print_binary(va_list list)
 	len = b_length(num);
 	str = malloc(sizeof(char) * len + 1);
 	if (str == NULL)
-		return (1);
+		return (-1);
 	for (i = 0; num > 0; i++)
 	{
 		if (num % 2 == 0)

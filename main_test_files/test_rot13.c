@@ -12,7 +12,7 @@ int main(void)
 {
 	int a;
 
-	a = _printf("%s\n", "hello");
+	a = _printf("%R\n", "hello");
 	_printf("%d\n", a);
 	a = printf("%s\n", "hello");
 	printf("%d\n", a);
