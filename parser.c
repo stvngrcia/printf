@@ -30,9 +30,12 @@ int parser(const char *format, conver_t f_list[], va_list arg_list)
 			}
 			if (f_list[j].sym == NULL && format[i + 1] != ' ')
 			{
-				_write_char(format[i]);
-				_write_char(format[i + 1]);
-				printed_chars = printed_chars + 2;
+				if (format[i + 1] != '\0')
+				{
+					_write_char(format[i]);
+					_write_char(format[i + 1]);
+					printed_chars = printed_chars + 2;
+				}
 			}
 			i = i + 1; /*Updating i to skip format symbols*/
 		}
