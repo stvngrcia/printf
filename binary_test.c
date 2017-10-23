@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-    _printf("%b\n", -42);
+    _printf("%b\n", 0);
     printf("%d\n", INT_MAX);
     return (0);
 }

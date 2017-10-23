@@ -11,12 +11,14 @@ int print_binary(va_list list)
 	int len;
 	char *str;
 	char *rev_str;
+	int flag = 0;
 
 	num =  va_arg(list, int);
 	if (num < 0)
 	{
 		_write_char('-');
 		num = num * -1;
+		flag = 1;
 	}
 	len = b_length(num);
 	str = malloc(sizeof(char) * len + 1);
@@ -43,5 +45,5 @@ int print_binary(va_list list)
 	write_base(rev_str);
 	free(str);
 	free(rev_str);
-	return (len);
+	return (len + flag);
 }
