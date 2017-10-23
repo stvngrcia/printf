@@ -6,19 +6,28 @@
  */
 int print_binary(va_list list)
 {
-	int num;
+	long int num;
 	int i;
 	int len;
 	char *str;
 	char *rev_str;
 
-	num =  va_arg(list, unsigned int);
+	num =  va_arg(list, int);
+	if (num < 0)
+	{
+		_write_char('-');
+		num = num * -1;
+	}
 	len = b_length(num);
 	str = malloc(sizeof(char) * len + 1);
 	if (str == NULL)
 		return (-1);
-	if (num < 0)
-		return (-1);
+
+	if (num == 0)
+	{
+		_write_char('0');
+		return (1);
+	}
 	for (i = 0; num > 0; i++)
 	{
 		if (num % 2 == 0)

@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
+#include <limits.h>
 
 /**
  * main - Entry point
@@ -8,9 +9,7 @@
  */
 int main(void)
 {
-    int a;
-
-    a = _printf("%b\n", -98);
-    printf("%d\n", a);
+    _printf("%b\n", -42);
+    printf("%d\n", INT_MAX);
     return (0);
 }

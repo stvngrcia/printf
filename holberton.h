@@ -32,7 +32,7 @@ int print_reversed(va_list arg);
 int rot13(va_list);
 
 /*Helper functions*/
-int b_length(unsigned int);
+unsigned int b_length(unsigned int);
 char *rev_string(char *);
 void write_base(char *str);
 char *_memcpy(char *dest, char *src, unsigned int n);

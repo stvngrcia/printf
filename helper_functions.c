@@ -5,9 +5,9 @@
  * @num: The number for which the length is being calculated
  * Return: An integer representing the length of a number
  */
-int b_length(unsigned int num)
+unsigned int b_length(unsigned int num)
 {
-	int i;
+	unsigned int i;
 
 	for (i = 0; num > 0; i++)
 	{
