@@ -29,6 +29,7 @@ int print_integer(va_list);
 int print_number(int num);
 int print_binary(va_list);
 int print_reversed(va_list arg);
+int rot13(va_list);
 
 /*Helper functions*/
 int b_length(unsigned int);

@@ -22,3 +22,37 @@ int print_reversed(va_list arg)
 	free(ptr);
 	return (len);
 }
+
+/**
+ * rot13 - Converts string to rot13
+ * @str: string to convert
+ * Return: converted string
+ */
+int rot13(va_list list)
+{
+	int i;
+	int x;
+	int c;
+	char *str;
+	char s[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char u[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+
+	str = va_arg(list, char *);
+	if (str == NULL)
+		return (0);
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		for (x = 0; x <= 48; x++)
+		{
+			if (str[i] == s[x])
+			{
+				str[i] = u[x];
+				break;
+			}
+		}
+	}
+	for (c = 0; str[c] != '\0'; c++)
+		_write_char(str[c]);
+	return (c);
+}
