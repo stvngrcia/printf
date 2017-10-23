@@ -15,8 +15,8 @@ int parser(const char *format, conver_t f_list[], va_list arg_list)
 	int printed_chars;
 
 	printed_chars = 0;
-	if (format == NULL)
-		return (0);
+	/*if (format == NULL)
+		return (-1);*/
 	for (i = 0; format[i] != '\0'; i++)/* Iterates through the main str*/
 	{
 		if (format[i] == '%') /*Checks for format specifiers*/
@@ -29,6 +29,12 @@ int parser(const char *format, conver_t f_list[], va_list arg_list)
 					printed_chars += f_list[j].f(arg_list);
 					break;
 				}
+			}
+			if (f_list[j].sym == NULL)
+			{
+				_write_char(format[i]);
+				_write_char(format[i + 1]);
+				printed_chars = printed_chars + 2;
 			}
 			i = i + 1; /*Updating i to skip format symbols*/
 		}
