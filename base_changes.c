@@ -7,8 +7,7 @@
 int print_binary(va_list list)
 {
 	long int num;
-	int i;
-	int len;
+	int i, len;
 	char *str;
 	char *rev_str;
 	int flag = 0;
