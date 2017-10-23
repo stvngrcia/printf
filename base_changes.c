@@ -28,6 +28,7 @@ int print_binary(va_list list)
 	if (num == 0)
 	{
 		_write_char('0');
+		free(str);
 		return (1);
 	}
 	for (i = 0; num > 0; i++)
