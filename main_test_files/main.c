@@ -17,8 +17,7 @@ int main(void)
 
 	a = _printf("%i, %d\n", number, number);
 	printf("%d\n", a);
-	a = _printf("% \n");
+	a = _printf("% ");
 	printf("%d\n", a);
-	printf("-->%");
 	return (0);
 }
