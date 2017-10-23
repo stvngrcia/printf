@@ -15,8 +15,6 @@ int parser(const char *format, conver_t f_list[], va_list arg_list)
 	int printed_chars;
 
 	printed_chars = 0;
-	/*if (format == NULL)
-		return (-1);*/
 	for (i = 0; format[i] != '\0'; i++)/* Iterates through the main str*/
 	{
 		if (format[i] == '%') /*Checks for format specifiers*/
