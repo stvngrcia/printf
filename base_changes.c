@@ -12,7 +12,7 @@ int print_binary(va_list list)
 	char *str;
 	char *rev_str;
 
-	num =  va_arg(list, unsigned int) * -1;
+	num =  va_arg(list, unsigned int);
 	len = b_length(num);
 	str = malloc(sizeof(char) * len + 1);
 	if (str == NULL)
