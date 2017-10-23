@@ -1,5 +1,4 @@
 #include "holberton.h"
-int check_percentage(const char *format, int i);
 
 /**
  * parser - Receives the main string and all the necessary parameters to
@@ -29,9 +28,11 @@ int parser(const char *format, conver_t f_list[], va_list arg_list)
 					break;
 				}
 			}
-			if (f_list[j].sym == NULL)
+			if (f_list[j].sym == NULL && format[i + 1] != ' ')
 			{
-				;
+				_write_char(format[i]);
+				_write_char(format[i + 1]);
+				printed_chars = printed_chars + 2;
 			}
 			i = i + 1; /*Updating i to skip format symbols*/
 		}
@@ -42,28 +43,4 @@ int parser(const char *format, conver_t f_list[], va_list arg_list)
 		}
 	}
 	return (printed_chars);
-}
-/**
- * check_percentage - Checking if the percentage is there
- * @f: format array
- * @i: Integer counter
- * Return: The number of characters printed
- */
-int check_percentage(const char *f, int i)
-{
-
-	int counter;
-
-	counter = 0;
-	if ((f[i] < 'A' || f[i] > 'Z') && (f[i] < 'a' || f[i] > 'b'))
-	{
-		;
-	}
-	else
-	{
-		_write_char(f[i]);
-		_write_char(f[i + 1]);
-		counter = 2;
-	}
-	return (counter);
 }
