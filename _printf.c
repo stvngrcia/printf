@@ -17,12 +17,13 @@ int _printf(const char *format, ...)
 		{"i", print_integer},
 		{"b", print_binary},
 		{"r", print_reversed},
+		{"R", rot13},
 		{NULL, NULL}
 	};
 	va_list arg_list;
 
 	if (format == NULL)
-		return (-1);
+		return (0);
 
 	va_start(arg_list, format);
 	/*Calling parser function*/
