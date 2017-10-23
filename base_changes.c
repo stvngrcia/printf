@@ -18,7 +18,7 @@ int print_binary(va_list list)
 	if (str == NULL)
 		return (-1);
 	if (num < 0)
-		return(-1);
+		return (-1);
 	for (i = 0; num > 0; i++)
 	{
 		if (num % 2 == 0)
