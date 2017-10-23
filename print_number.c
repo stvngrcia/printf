@@ -1,69 +1,35 @@
 #include "holberton.h"
-int get_exponent(int);
-int number_length(unsigned int);
+
 /**
- * print_number - prints numbers digit by digit
- * @num: number to print
- * Return: The total printed numebers
+ * print_number - print given number
+ * @args: list to retrieve number from
+ *
+ * Return: number of chars printed
  */
-int print_number(int num)
+int print_number(va_list args)
 {
-	int length;
-	unsigned int exponent;
-	unsigned int number;
-	unsigned int leftover;
-	unsigned int n;
+	int n = va_arg(args, int);
+	int div = 1;
+	int len = 0;
+	unsigned int num;
 
-	n = num;
-	if (num < 0)
+	if (n < 0)
 	{
-		n = -num;
-		_write_char('-');
+		len += _putchar('-');
+		num = n * -1;
 	}
-	length = number_length(n);
-	exponent = get_exponent(length);
+	else
+		num = n;
 
-	while (exponent > 0)
+	while (num / div > 9)
+		div *= 10;
+
+	while (div != 0)
 	{
-		number = n / exponent;
-		_write_char(number + 48);
-		leftover = n - (number * exponent);
-		exponent = exponent / 10;
-
-		if (leftover < exponent)
-		{
-			_write_char('0');
-			exponent = exponent / 10;
-		}
-		n = leftover;
+		len += _putchar('0' + num / div);
+		num %= div;
+		div /= 10;
 	}
-	return (length);
-}
-/**
- * get_exponent - Calculates the exponent of a number
- * @length: lenght of number
- * Return: the exponent
- */
-int get_exponent(int length)
-{
-	int exponent;
 
-	for (exponent = 1; length > 1; length--)
-		exponent = exponent * 10;
-	return (exponent);
-}
-/**
- * number_length - Calculates the lenght of a number
- * @number: number to get the length of
- * Return: the lenght of a number
- */
-int number_length(unsigned int number)
-{
-	int counter;
-
-	for (counter = 0; number > 0; counter++)
-	{
-		number = number / 10;
-	}
-	return (counter);
+	return (len);
 }
