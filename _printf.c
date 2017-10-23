@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 	va_list arg_list;
 
 	if (format == NULL)
-		return (0);
+		return (-1);
 
 	va_start(arg_list, format);
 	/*Calling parser function*/
