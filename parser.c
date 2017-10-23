@@ -28,7 +28,7 @@ int parser(const char *format, conver_t f_list[], va_list arg_list)
 					break;
 				}
 			}
-			if (f_list[j].sym == NULL)
+			if (f_list[j].sym == NULL && format[i + 1] != ' ')
 			{
 				_write_char(format[i]);
 				_write_char(format[i + 1]);
