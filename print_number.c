@@ -6,7 +6,7 @@
  *
  * Return: number of chars printed
  */
-int print_integer(va_list args)
+int print_number(va_list args)
 {
 	int n = va_arg(args, int);
 	int div = 1;
@@ -15,7 +15,7 @@ int print_integer(va_list args)
 
 	if (n < 0)
 	{
-		len += _putchar('-');
+		len += _write_char('-');
 		num = n * -1;
 	}
 	else
@@ -26,7 +26,7 @@ int print_integer(va_list args)
 
 	while (div != 0)
 	{
-		len += _putchar('0' + num / div);
+		len += _write_char('0' + num / div);
 		num %= div;
 		div /= 10;
 	}
