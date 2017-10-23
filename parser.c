@@ -31,7 +31,7 @@ int parser(const char *format, conver_t f_list[], va_list arg_list)
 			}
 			if (f_list[j].sym == NULL)
 			{
-				printed_chars = check_percentage(format, i);
+				;
 			}
 			i = i + 1; /*Updating i to skip format symbols*/
 		}
@@ -43,7 +43,12 @@ int parser(const char *format, conver_t f_list[], va_list arg_list)
 	}
 	return (printed_chars);
 }
-
+/**
+ * check_percentage - Checking if the percentage is there
+ * @f: format array
+ * @i: Integer counter
+ * Return: The number of characters printed
+ */
 int check_percentage(const char *f, int i)
 {
 
