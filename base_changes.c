@@ -27,6 +27,8 @@ int print_binary(va_list list)
 	}
 	str[i] = '\0';
 	rev_str = rev_string(str);
+	if (rev_str == NULL)
+		return (-1);
 	write_base(rev_str);
 	free(str);
 	free(rev_str);
