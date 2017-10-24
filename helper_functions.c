@@ -1,20 +1,5 @@
 #include "holberton.h"
 #include <stdio.h>
-/**
- * b_length - Calculates the length for a binary number
- * @num: The number for which the length is being calculated
- * Return: An integer representing the length of a number
- */
-unsigned int b_length(unsigned int num)
-{
-	unsigned int i;
-
-	for (i = 0; num > 0; i++)
-	{
-		num = num / 2;
-	}
-	return (i);
-}
 
 /**
  * rev_string - reverses a string in place
@@ -59,6 +44,23 @@ void write_base(char *str)
 }
 
 /**
+ * base_len - Calculates the length for an octal number
+ * @num: The number for which the length is being calculated
+ * @base: Base to be calculated by
+ * Return: An integer representing the length of a number
+ */
+unsigned int base_len(unsigned int num, int base)
+{
+	unsigned int i;
+
+	for (i = 0; num > 0; i++)
+	{
+		num = num / base;
+	}
+	return (i);
+}
+
+/**
  * _memcpy - copy memory area
  * @dest: Destination for copying
  * @src: Source to copy from
@@ -73,20 +75,4 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 		dest[i] = src[i];
 	dest[i] = '\0';
 	return (dest);
-}
-
-/**
- * octal_length - Calculates the length for an octal number
- * @num: The number for which the length is being calculated
- * Return: An integer representing the length of a number
- */
-unsigned int octal_length(unsigned int num)
-{
-	unsigned int i;
-
-	for (i = 0; num > 0; i++)
-	{
-		num = num / 8;
-	}
-	return (i);
 }
