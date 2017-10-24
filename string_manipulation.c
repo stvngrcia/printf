@@ -40,7 +40,7 @@ int rot13(va_list list)
 
 	string = va_arg(list, char *);
 	if (string == NULL)
-		return (-1);
+		string = "(null)";
 	for (i = 0; string[i] != '\0'; i++)
 		;
 	str = malloc(sizeof(char) * i + 1);
