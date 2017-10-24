@@ -9,7 +9,8 @@
  */
 int main(void)
 {
-    _printf("%b\n", 0);
-    printf("%d\n", INT_MAX);
+    int a;
+    a = _printf("%b\n", 0);
+    printf("%d\n", a);
     return (0);
 }

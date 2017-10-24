@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
  * print_binary - Converts a number from base 10 to binary
  * @list: List of arguments passed to this function
@@ -6,30 +7,21 @@
  */
 int print_binary(va_list list)
 {
-	long int num;
+	unsigned int num;
 	int i, len;
 	char *str;
 	char *rev_str;
-	int flag = 0;
 
-	num =  va_arg(list, int);
+	num = va_arg(list, unsigned int);
+	if (num == 0)
+		return (_write_char('0'));
 	if (num < 0)
-	{
-		_write_char('-');
-		num = num * -1;
-		flag = 1;
-	}
+		return (-1);
 	len = b_length(num);
 	str = malloc(sizeof(char) * len + 1);
 	if (str == NULL)
 		return (-1);
 
-	if (num == 0)
-	{
-		_write_char('0');
-		free(str);
-		return (1);
-	}
 	for (i = 0; num > 0; i++)
 	{
 		if (num % 2 == 0)
@@ -45,5 +37,5 @@ int print_binary(va_list list)
 	write_base(rev_str);
 	free(str);
 	free(rev_str);
-	return (len + flag);
+	return (len);
 }
