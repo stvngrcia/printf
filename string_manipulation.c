@@ -48,12 +48,9 @@ int rot13(va_list list)
 				_write_char(u[x]);
 				break;
 			}
-			else
-			{
-				_write_char(str[i]);
-				break;
-			}
 		}
+		if (x == 53)
+			_write_char(str[i]);
 	}
 	return (i);
 }
