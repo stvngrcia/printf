@@ -14,7 +14,7 @@ char *rev_string(char *s)
 	char tmp;
 	char *dest;
 
-	for (len = 1; s[len] != '\0'; len++)
+	for (len = 0; s[len] != '\0'; len++)
 	{}
 
 	dest = malloc(sizeof(char) * len + 1);

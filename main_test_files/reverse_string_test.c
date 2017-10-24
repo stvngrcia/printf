@@ -13,7 +13,7 @@ int main(void)
 	char *str;
 
 	str = "school";
-	a = _printf("%r\n", "holberton"); /*expected: notrebloh*/
+	a = _printf(">%r\n", ""); /*expected: notrebloh*/
 	printf("%d\n", a); /*expected: 10*/
 
 	b = _printf("%r\n", str); /*expected: loohcs*/
