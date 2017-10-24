@@ -12,7 +12,7 @@ int main(void)
 	int b;
 	char *str;
 
-	str = NULL;
+	str = "NULL";
 	a = _printf("%r\n", NULL); /*expected: notrebloh*/
 	printf("--->%d\n", a); /*expected: 10*/
 
