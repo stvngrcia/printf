@@ -15,7 +15,8 @@ int print_reversed(va_list arg)
 	if (str == NULL)
 		return (-1);
 	ptr = rev_string(str);
-
+	if (ptr == NULL)
+		return (-1);
 	for (len = 0; ptr[len] != '\0'; len++)
 		_write_char(ptr[len]);
 	free(ptr);
