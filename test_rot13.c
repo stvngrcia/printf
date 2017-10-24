@@ -12,10 +12,11 @@ int main(void)
 {
 	int a;
 
+	_printf("%R\n", "123");
 	a = _printf("%R\n", "hello");
 	_printf("%d\n", a);
 	a = printf("%s\n", "hello");
 	printf("%d\n", a);
-	/*_printf("%R", "Holberton school");*/
+	_printf("%R\n", "Holberton school");
 	return (0);
 }

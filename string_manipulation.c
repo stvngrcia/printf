@@ -39,8 +39,6 @@ int rot13(va_list list)
 	char u[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	string = va_arg(list, char *);
-	if (string == NULL)
-		string = "(null)";
 	for (i = 0; string[i] != '\0'; i++)
 		;
 	str = malloc(sizeof(char) * i + 1);
@@ -48,7 +46,7 @@ int rot13(va_list list)
 		return (-1);
 	str = _memcpy(str, string, i);
 	if (str == NULL)
-		return (0);
+		return (-1);
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		for (x = 0; x <= 48; x++)
