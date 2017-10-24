@@ -32,19 +32,11 @@ int rot13(va_list list)
 {
 	int i;
 	int x;
-	int c;
-	char *string;
 	char *str;
 	char s[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char u[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	string = va_arg(list, char *);
-	for (i = 0; string[i] != '\0'; i++)
-		;
-	str = malloc(sizeof(char) * i + 1);
-	if (str == NULL)
-		return (-1);
-	str = _memcpy(str, string, i);
+	str = va_arg(list, char *);
 	if (str == NULL)
 		return (-1);
 	for (i = 0; str[i] != '\0'; i++)
@@ -53,13 +45,15 @@ int rot13(va_list list)
 		{
 			if (str[i] == s[x])
 			{
-				str[i] = u[x];
+				_write_char(u[x]);
+				break;
+			}
+			else
+			{
+				_write_char(str[i]);
 				break;
 			}
 		}
 	}
-	for (c = 0; str[c] != '\0'; c++)
-		_write_char(str[c]);
-	free(str);
-	return (c);
+	return (i);
 }
