@@ -19,6 +19,7 @@ int _printf(const char *format, ...)
 		{"r", print_reversed},
 		{"R", rot13},
 		{"u", unsigned_integer},
+		{"o", print_octal},
 		{NULL, NULL}
 	};
 	va_list arg_list;

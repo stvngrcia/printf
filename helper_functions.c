@@ -74,3 +74,19 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 	dest[i] = '\0';
 	return (dest);
 }
+
+/**
+ * octal_length - Calculates the length for an octal number
+ * @num: The number for which the length is being calculated
+ * Return: An integer representing the length of a number
+ */
+unsigned int octal_length(unsigned int num)
+{
+	unsigned int i;
+
+	for (i = 0; num > 0; i++)
+	{
+		num = num / 8;
+	}
+	return (i);
+}
