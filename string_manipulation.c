@@ -18,7 +18,6 @@ int print_reversed(va_list arg)
 
 	for (len = 0; ptr[len] != '\0'; len++)
 		_write_char(ptr[len]);
-	_write_char('\0');
 	free(ptr);
 	return (len);
 }
