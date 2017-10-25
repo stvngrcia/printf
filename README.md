@@ -42,8 +42,8 @@ int main(void)
 	int b;
 	char *str;
 
-	str = "NULL";
-	a = _printf("%r\n", NULL); /*expected: notrebloh*/
+	str = "school";
+	a = _printf("%r\n", "Holberton"); /*expected: notrebloh*/
 	printf("--->%d\n", a); /*expected: 10*/
 
 	b = _printf("%r\n", str); /*expected: loohcs*/
