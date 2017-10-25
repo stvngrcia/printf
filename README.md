@@ -55,8 +55,3 @@ int main(void)
 }
 
 ```
-# Functions used
-
-# Flow diagram
-
-
